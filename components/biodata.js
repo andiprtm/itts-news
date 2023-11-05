@@ -6,7 +6,7 @@ const poppinsMedium = require('../assets/fonts/Poppins-Medium.ttf');
 const poppinsSemiBold = require('../assets/fonts/Poppins-SemiBold.ttf');
 const poppinsBold = require('../assets/fonts/Poppins-Bold.ttf');
 
-export default class biodata extends React.Component {
+export default class Biodata extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
