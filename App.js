@@ -7,7 +7,7 @@ import Home from "./screens/home";
 // import FunctionalComponent from "./screens/functional_components";
 // import ClassComponent from "./screens/class_components";
 import ListNews from "./screens/listNews";
-// import NewsDetail from "./screens/news_detail";
+import NewsDetail from "./screens/detailNews";
 
 const Stack = createNativeStackNavigator();
 
@@ -34,24 +34,6 @@ class App extends Component {
             }}
           />
 
-          {/* <Stack.Screen
-            name="FunctionalComponent"
-            component={FunctionalComponent}
-            options={{
-              title: "Functional Component",
-              ...this.headerStyle,
-            }}
-          />
-
-          <Stack.Screen
-            name="ClassComponent"
-            component={ClassComponent}
-            options={{
-              title: "Class Component",
-              ...this.headerStyle,
-            }}
-          /> */}
-
           <Stack.Screen
             name="ListNews"
             component={ListNews}
@@ -61,14 +43,14 @@ class App extends Component {
             }}
           />
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name="NewsDetail"
             component={NewsDetail}
             options={{
-              title: "News Detail",
+              title: "Detail Berita",
               ...this.headerStyle,
             }}
-          /> */}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );
