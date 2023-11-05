@@ -4,7 +4,7 @@ import {
   View,
   StyleSheet,
   Image,
-  Dimensions,
+  ScrollView,
   Linking,
 } from "react-native";
 import Separator from "../components/separator";
@@ -44,7 +44,7 @@ class NewsDetail extends Component {
 
     if (this.state.fontsLoaded) {
         return (
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
               <View style={styles.rectangleParent}>
                   <Image style={styles.groupPosition} resizeMode="cover" source={{ uri: data.image }} />
                   <LinearGradient style={[styles.groupItem, styles.groupPosition]} colors={['rgba(217, 217, 217, 0)','#fff']} />
@@ -58,12 +58,12 @@ class NewsDetail extends Component {
                 <Text style={styles.text}>{'\t'}{'\t'}{'\t'}{'\t'}{'\t'}{data.content}</Text>
                 <Separator height={20} />
                 <Button
-                  text="read more"
+                  text="Baca Lebih Lanjut"
                   onPress={() => Linking.openURL(data.link).catch((err) => console.error("Error", err))
                 }
               />
               </View>
-            </View>
+            </ScrollView>
           );
     }else{
         return null;

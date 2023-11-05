@@ -72,7 +72,7 @@ class ListNews extends PureComponent {
             <View style={{ alignSelf: "stretch"}}>
                 <Text ellipsizeMode='tail' numberOfLines={1} style={styles.itemText}>{item.title}</Text>
                 <Separator height={8}/>
-                <View style={{borderWidth: 1, borderColor:'black', marginLeft: 15, width: "25%"}}></View>
+                <View style={{borderBottomWidth: 1, borderColor:'black', marginLeft: 15, width: "25%"}}></View>
                 <Separator height={5}/>
                 <Text ellipsizeMode='tail' numberOfLines={4} style={styles.itemContent}>{item.content}</Text>
             </View>
@@ -145,6 +145,6 @@ const styles = StyleSheet.create({
     width: "100%", 
     overflow: "hidden", 
     justifyContent: "space-between", 
-    paddingRight: "10%"
+    paddingRight: "5%"
   }
 });
