@@ -1,28 +1,78 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Button from './components/button';
-import Biodata from './components/biodata';
-import LineSeparator from './components/lineSeparator';
-import Separator from './components/separator';
+import React from "react";
+import { Component } from "react";
+import { StatusBar, Text } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+import Home from "./screens/home";
+// import FunctionalComponent from "./screens/functional_components";
+// import ClassComponent from "./screens/class_components";
+import ListNews from "./screens/listNews";
+// import NewsDetail from "./screens/news_detail";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <LineSeparator />
-      <Biodata title="Nama lengkap" text="Moch. Andi Divangga Pratama"/>
-      <Separator height={30}/>
-      <Button text="Lihat Berita"/>
-      <StatusBar style="auto" />
-    </View>
-  );
+const Stack = createNativeStackNavigator();
+
+class App extends Component {
+  headerStyle = {
+    headerTitleStyle: { color: "white" },
+    headerStyle: {
+      backgroundColor: "#AA0002",
+    },
+    headerTintColor: "white",
+  };
+
+  render() {
+    return (
+      <NavigationContainer>
+        <StatusBar style="auto" backgroundColor="#AA0002" />
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{
+              title: "",
+              ...this.headerStyle,
+            }}
+          />
+
+          {/* <Stack.Screen
+            name="FunctionalComponent"
+            component={FunctionalComponent}
+            options={{
+              title: "Functional Component",
+              ...this.headerStyle,
+            }}
+          />
+
+          <Stack.Screen
+            name="ClassComponent"
+            component={ClassComponent}
+            options={{
+              title: "Class Component",
+              ...this.headerStyle,
+            }}
+          /> */}
+
+          <Stack.Screen
+            name="ListNews"
+            component={ListNews}
+            options={{
+              title: "Daftar Berita",
+              ...this.headerStyle,
+            }}
+          />
+
+          {/* <Stack.Screen
+            name="NewsDetail"
+            component={NewsDetail}
+            options={{
+              title: "News Detail",
+              ...this.headerStyle,
+            }}
+          /> */}
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: "8%",
-  },
-});
+export default App;
