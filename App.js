@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Button from './components/button';
 import Biodata from './components/biodata';
 // import LineSeparator from './components/lineSeparator';
-// import Separator from './components/separator';
+import Separator from './components/separator';
 // import Button from './components/classButton';
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
     <View style={styles.container}>
       {/* <LineSeparator /> */}
       <Biodata title="Nama lengkap" text="Moch. Andi Divangga Pratama"/>
-      {/* <Separator height={30}/> */}
+      <Separator height={30}/>
       <Button text="Lihat Berita"/>
       <StatusBar style="auto" />
     </View>
