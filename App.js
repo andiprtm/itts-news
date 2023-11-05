@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Button from './components/button';
-// import Biodata from './components/biodata';
+import Biodata from './components/biodata';
 // import LineSeparator from './components/lineSeparator';
 // import Separator from './components/separator';
 // import Button from './components/classButton';
@@ -9,16 +9,9 @@ import Button from './components/button';
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <LineSeparator />
+      {/* <LineSeparator /> */}
       <Biodata title="Nama lengkap" text="Moch. Andi Divangga Pratama"/>
-      <LineSeparator />
-      <Biodata title="Program Studi" text="Moch. Andi Divangga Pratama"/>
-      <LineSeparator />
-      <Biodata title="Nomor Induk Mahasiswa" text="Moch. Andi Divangga Pratama"/>
-      <LineSeparator />
-      <Biodata title="Alamat Email" text="Moch. Andi Divangga Pratama"/>
-      <LineSeparator />
-      <Separator height={30}/> */}
+      {/* <Separator height={30}/> */}
       <Button text="Lihat Berita"/>
       <StatusBar style="auto" />
     </View>
