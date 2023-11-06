@@ -15,7 +15,7 @@ class LineSeparator extends Component {
 
 const styles = StyleSheet.create({
     lineStyle:{
-        borderBottomWidth: 0.5,
+        borderWidth: 0.5,
         borderColor:'black',
    }
 })
