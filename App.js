@@ -1,13 +1,8 @@
-import React from "react";
-import { Component } from "react";
-import { StatusBar, Text } from "react-native";
+import React, { Component } from "react";
+import { StatusBar } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import Home from "./screens/home";
-// import FunctionalComponent from "./screens/functional_components";
-// import ClassComponent from "./screens/class_components";
-import ListNews from "./screens/listNews";
-import NewsDetail from "./screens/detailNews";
+import { Home, ListNews, NewsDetail } from "./screens";
 
 const Stack = createNativeStackNavigator();
 

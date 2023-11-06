@@ -10,7 +10,7 @@ import {
   Image,
 } from "react-native";
 import * as Font from 'expo-font';
-import Separator from "../components/separator";
+import { Separator } from "../components";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -71,10 +71,11 @@ class ListNews extends PureComponent {
             <Image source={{ uri: item.image }} style={styles.itemImage} />
             <View style={{ alignSelf: "stretch"}}>
                 <Text ellipsizeMode='tail' numberOfLines={1} style={styles.itemText}>{item.title}</Text>
-                <Separator height={8}/>
-                <View style={{borderWidth: 1, borderColor:'black', marginLeft: 15, width: "25%"}}></View>
-                <Separator height={5}/>
+                <Separator height={4}/>
+                <Text ellipsizeMode='tail' numberOfLines={4} style={styles.itemDate}>Updated: {item.date}</Text>
+                <Separator height={3}/>
                 <Text ellipsizeMode='tail' numberOfLines={4} style={styles.itemContent}>{item.content}</Text>
+                <Separator height={5}/>
             </View>
           </View>
         </TouchableOpacity>
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   itemBorder: {
-    borderWidth: 0.5,
+    borderBottomWidth: 0.5,
     borderColor: "#cccccc",
   },
   itemImage: {
@@ -136,7 +137,12 @@ const styles = StyleSheet.create({
     fontSize: 13,
     width: windowWidth - 150,
     marginLeft: 15,
-    marginBottom: 12
+  },
+  itemDate: {
+    fontFamily: "Poppins-Medium",
+    fontSize: 10,
+    width: windowWidth - 150,
+    marginLeft: 15,
   },
   parent:{
     flex: 1, 

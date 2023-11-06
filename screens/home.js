@@ -2,15 +2,9 @@ import React, { Component } from "react";
 import {
   Image,
   ScrollView,
-  Text,
-  View,
   StyleSheet,
-  TouchableOpacity,
 } from "react-native";
-import Button from '../components/button';
-import Biodata from '../components/biodata';
-import LineSeparator from '../components/lineSeparator';
-import Separator from '../components/separator';
+import { Biodata, Separator, Button, LineSeparator} from "../components";
 
 class Home extends Component {
   render() {

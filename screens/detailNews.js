@@ -4,11 +4,9 @@ import {
   View,
   StyleSheet,
   Image,
-  Dimensions,
   Linking,
 } from "react-native";
-import Separator from "../components/separator";
-import Button from "../components/button";
+import { Separator, Button} from "../components";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Font from 'expo-font';
 
