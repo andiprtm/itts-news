@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Image,
   Linking,
+  ScrollView,
 } from "react-native";
 import { Separator, Button} from "../components";
 import { LinearGradient } from "expo-linear-gradient";
@@ -42,7 +43,7 @@ class NewsDetail extends Component {
 
     if (this.state.fontsLoaded) {
         return (
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
               <View style={styles.rectangleParent}>
                   <Image style={styles.groupPosition} resizeMode="cover" source={{ uri: data.image }} />
                   <LinearGradient style={[styles.groupItem, styles.groupPosition]} colors={['rgba(217, 217, 217, 0)','#fff']} />
@@ -61,7 +62,7 @@ class NewsDetail extends Component {
                 }
               />
               </View>
-            </View>
+            </ScrollView>
           );
     }else{
         return null;
