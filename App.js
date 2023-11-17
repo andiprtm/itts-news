@@ -3,6 +3,7 @@ import { StatusBar } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { Home, ListNews, NewsDetail } from "./screens";
+import { NativeBaseProvider } from 'native-base';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +18,8 @@ class App extends Component {
 
   render() {
     return (
-      <NavigationContainer>
+      <NativeBaseProvider>
+          <NavigationContainer>
         <StatusBar style="auto" backgroundColor="#AA0002" />
         <Stack.Navigator>
           <Stack.Screen
@@ -48,6 +50,7 @@ class App extends Component {
           />
         </Stack.Navigator>
       </NavigationContainer>
+      </NativeBaseProvider>
     );
   }
 }

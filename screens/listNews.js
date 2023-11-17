@@ -47,6 +47,7 @@ class ListNews extends PureComponent {
       this.setState({ data: json.articles });
     } catch (error) {
       console.error(error);
+      this.props.navigation.navigate('Home');
     } finally {
       this.setState({ isLoading: false });
     }
@@ -65,8 +66,8 @@ class ListNews extends PureComponent {
       <>
         <TouchableOpacity
           style={styles.item}
-          onPress={() => navigation.navigate("NewsDetail", { data: item })}
-        >
+          onPress={() => navigation.navigate("NewsDetail", { data: item })}>
+
           <View style={styles.parent}>
             <Image source={{ uri: item.image }} style={styles.itemImage} />
             <View style={{ alignSelf: "stretch"}}>
@@ -78,6 +79,7 @@ class ListNews extends PureComponent {
                 <Separator height={5}/>
             </View>
           </View>
+          
         </TouchableOpacity>
         <View style={styles.itemBorder}></View>
       </>

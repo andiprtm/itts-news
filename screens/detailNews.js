@@ -3,12 +3,12 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
   Linking,
   ScrollView,
 } from "react-native";
 import { Separator, Button} from "../components";
 import { LinearGradient } from "expo-linear-gradient";
+import { Image } from 'native-base';
 import * as Font from 'expo-font';
 
 const poppinsMedium = require('../assets/fonts/Poppins-Medium.ttf');
@@ -44,24 +44,46 @@ class NewsDetail extends Component {
     if (this.state.fontsLoaded) {
         return (
             <ScrollView style={styles.container}>
+
               <View style={styles.rectangleParent}>
-                  <Image style={styles.groupPosition} resizeMode="cover" source={{ uri: data.image }} />
-                  <LinearGradient style={[styles.groupItem, styles.groupPosition]} colors={['rgba(217, 217, 217, 0)','#fff']} />
+                  <Image 
+                    style={styles.groupPosition} 
+                    resizeMode="cover" 
+                    source={{ uri: data.image }} 
+                    alt="ini gambar"/>
+                  <LinearGradient 
+                    style={[styles.groupItem, styles.groupPosition]}
+                    colors={['rgba(217, 217, 217, 0)','#fff']} />
               </View>
+
               <Separator height={10} />
+
               <View style={{ padding: "6%" }}>
-                <Text style={styles.title}>{data.title}</Text>
+                <Text style={styles.title}>
+                  {data.title}
+                </Text>
+
                 <Separator height={10} />
-                <Text style={styles.keterangan}>Terakhir diubah pada: {data.date}</Text>
+
+                <Text style={styles.keterangan}>
+                  Terakhir diubah pada: {data.date}
+                </Text>
+
                 <Separator height={30} />
-                <Text style={styles.text}>{'\t'}{'\t'}{'\t'}{'\t'}{'\t'}{data.content}</Text>
+
+                <Text style={styles.text}>
+                  {'\t'}{'\t'}{'\t'}{'\t'}{'\t'}{data.content}
+                </Text>
+
                 <Separator height={20} />
+
                 <Button
                   text="read more"
                   onPress={() => Linking.openURL(data.link).catch((err) => console.error("Error", err))
-                }
-              />
+                }/>
+
               </View>
+
             </ScrollView>
           );
     }else{

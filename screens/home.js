@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import {
-  Image,
   ScrollView,
   StyleSheet,
 } from "react-native";
+import { Center, Image } from 'native-base';
 import { Biodata, Separator, Button, LineSeparator} from "../components";
 
 class Home extends Component {
@@ -11,27 +11,46 @@ class Home extends Component {
     const { navigation } = this.props;
 
     return (
-      <ScrollView style={styles.container}>
-        <Image source={require("../assets/instasi_logo.png")} style={styles.instansiLogo}/>
-        
-        <Separator height={34} />
+        <ScrollView style={styles.container}>
+          <Image 
+            source={require("../assets/instasi_logo.png")} 
+            style={styles.instansiLogo} 
+            alt="logo informatika dan itts"/>
+          
+          <Separator height={34} />
 
-        <Image source={require("../assets/profil.png")} style={styles.logo} />
+          <Center>
+            <Image 
+              size={186} 
+              borderRadius={100} 
+              source={require("../assets/profil.png")} 
+              alt="Alternate Text" />
+          </Center>
 
-        <Separator height={34} />
-        <LineSeparator/>
-        <Biodata title="Nama Lengkap" text="Moch. Andi Divangga Pratama"/>
-        <LineSeparator/>
-        <Biodata title="NIM" text="1203210005"/>
-        <LineSeparator/>
-        <Biodata title="Program Studi" text="Informatika - Institut Teknolgi Telkom Surabaya"/>
-        <LineSeparator/>
-        <Biodata title="Angkatan" text="2021"/>
-        <LineSeparator/>
-        <Separator height={34}/>
-        <Button text="Lihat Berita" onPress={() => navigation.navigate("ListNews")}/>
+          <Separator height={34} />
+          <LineSeparator/>
+          <Biodata 
+            title="Nama Lengkap" 
+            text="Moch. Andi Divangga Pratama"/>
+          <LineSeparator/>
+          <Biodata 
+            title="NIM" 
+            text="1203210005"/>
+          <LineSeparator/>
+          <Biodata 
+            title="Program Studi" 
+            text="Informatika - Institut Teknolgi Telkom Surabaya"/>
+          <LineSeparator/>
+          <Biodata 
+            title="Angkatan" 
+            text="2021"/>
+          <LineSeparator/>
+          <Separator height={34}/>
+          <Button 
+            text="Lihat Berita" 
+            onPress={() => navigation.navigate("ListNews")}/>
         
-      </ScrollView>
+        </ScrollView>
     );
   }
 }
@@ -50,13 +69,6 @@ const styles = StyleSheet.create({
     height: 28 ,
     resizeMode: "contain",
     alignSelf: "center",
-  },
-  logo: {
-    width: 186,
-    height: 186,
-    resizeMode: "contain",
-    alignSelf: "center",
-    borderRadius: 631
   },
   text: {
     fontSize: 16,
