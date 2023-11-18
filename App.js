@@ -27,7 +27,7 @@ class App extends Component {
             component={Home}
             options={{
               title: "",
-              ...this.headerStyle,
+              headerShown: false,
             }}
           />
 
