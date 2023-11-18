@@ -31,8 +31,8 @@ export default class Button extends React.Component {
     if (this.state.fontsLoaded) {
       return (
         <TouchableOpacity style={styles.container} onPress={this.props.onPress}>
-        <Text style={styles.text}>{this.props.text}</Text>
-      </TouchableOpacity>
+          <Text style={styles.text}>{this.props.text}</Text>
+        </TouchableOpacity>
       );
     } else {
       return null;
